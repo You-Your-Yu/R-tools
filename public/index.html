@@ -1,10 +1,13 @@
-
+<html>
 <head>
   <meta charset="utf-8">
-  <title>R-tools</title>
+  <title>プリコネR 防御力計算機</title>
 </head>
 <body>
   <h2>プリコネR 防御力計算機</h2>
+  <p>攻撃力と与ダメージをもとに、防御力を計算します。必要なデバフ数値の計算に役立ててください。</p>
+  <p>※ダメージ = 攻撃力 / (1 + 防御力 / 100) として計算しています。</p>
+  <p>※ダメージは通常攻撃でクリティカルなしの場合の値を入力してください。</p>
   <form action="javascript:void(0);" id="defenseCalculator">
     攻撃力：<input type="text" name="attack" value="10000"><br>
     ダメージ：<input type="text" name="damage" value="10000"><br><br>
