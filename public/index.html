@@ -1,41 +1,34 @@
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="img/logo.png">
+  <link rel="stylesheet" href="css/styles.css">
   <title>プリコネR 防御力計算機</title>
 </head>
 <body>
-  <h2>プリコネR 防御力計算機</h2>
-  <p>攻撃力と与ダメージをもとに、防御力を計算します。必要なデバフ数値の計算に役立ててください。</p>
-  <p>※ダメージ = 攻撃力 / (1 + 防御力 / 100) として計算しています。</p>
-  <p>※ダメージは通常攻撃でクリティカルなしの場合の値を入力してください。</p>
-  <form action="javascript:void(0);" id="defenseCalculator">
-    攻撃力：<input type="text" name="attack" value="10000"><br>
-    ダメージ：<input type="text" name="damage" value="10000"><br><br>
-    <input type="submit" value="防御力を計算"><br><br>
-    <span id="defense">防御力：</span><br>
-  </form>
-
-  <script>
-    (function(){
-
-      function calc_defense(attack, damage) {
-        return 100 * (attack / damage - 1);
-      }
-
-      function show_defense() {
-        console.log(inputs, defenseNode)
-        const attack = inputs[0].value;
-        const damage = inputs[1].value;
-        const defense = calc_defense(attack, damage);
-        defenseNode.textContent = `防御力：${defense}`;
-        console.log(attack, damage, defense)
-      }
-
-      const inputs = document.getElementsByTagName("input");
-      const defenseNode = document.getElementById("defense")
-      inputs[2].addEventListener("click", ()=>{show_defense(inputs, defenseNode)});
-      show_defense();
-    }())
-  </script>
+  <header>
+    <img src="img/logo.png" class="logo">
+    <h1 class="pageTitle">プリコネR<br>防御力計算機</h1>
+  </header>
+  <main>
+    <div class="calc" id="defenseCalculator">
+      <p>　攻撃力：<input type="text" name="attack" value="10000"></p>
+      <p>ダメージ：<input type="text" name="damage" value="10000"></p>
+      <p><input type="submit" value="防御力を計算"></p>
+      <p id="defense">防御力：</p>
+    </div>
+    <div class="msg">
+      <p>攻撃力と与ダメージをもとに、防御力を計算します。必要なデバフ数値の計算に役立ててください。</p>
+      <p>※ダメージ = 攻撃力 / (1 + 防御力 / 100) として計算しています。</p>
+      <p>※攻撃力はバフも含めた値を入力してください。</p>
+      <p>※ダメージは<b>通常攻撃</b>で<b>クリティカルなし</b>の場合の値を入力してください。</p>
+    </div>
+  </main>
+  <footer>
+    開発：<a href="https://github.com/You-Your-Yu/R-tools">https://github.com/You-Your-Yu/R-tools</a>
+  </footer>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
