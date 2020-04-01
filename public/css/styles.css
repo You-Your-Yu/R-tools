@@ -30,8 +30,24 @@ main .calc p {
     font-weight: bold;
 }
 
+main .calc .icon {
+    width: 1em;
+}
+
 main .msg {
     margin-top: 40px;
+}
+
+main .msg ul {
+    list-style: none;
+    list-style-position: inside;
+    padding: 0;
+}
+
+main .msg ul li {
+    padding-left: 20px;
+    background: url(../img/logo.png) left 0px top 3px no-repeat;
+    background-size: 1em auto;
 }
 
 footer {

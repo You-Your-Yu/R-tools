@@ -12,23 +12,27 @@
     <img src="img/logo.png" class="logo">
     <h1 class="pageTitle">プリコネR<br>防御力計算機</h1>
   </header>
-  <main>
-    <div class="calc" id="defenseCalculator">
-      <p>　攻撃力：<input type="text" name="attack" value="10000"></p>
-      <p>ダメージ：<input type="text" name="damage" value="10000"></p>
-      <p><input type="submit" value="防御力を計算"></p>
-      <p id="defense">防御力：</p>
+  <main id="app">
+    <div class="calc">
+      <p><b>攻撃力<img src="img/atk.png" class="icon">：</b><input type="text" v-model="attack"></p>
+      <p><b>ダメージ：</b><input type="text" v-model="damage"></p>
+      <p><b>防御力<img src="img/def.png" class="icon">：</b><input type="text" v-model="defense"></p>
     </div>
     <div class="msg">
-      <p>攻撃力と与ダメージをもとに、防御力を計算します。必要なデバフ数値の計算に役立ててください。</p>
-      <p>※ダメージ = 攻撃力 / (1 + 防御力 / 100) として計算しています。</p>
-      <p>※攻撃力はバフも含めた値を入力してください。</p>
-      <p>※ダメージは<b>通常攻撃</b>で<b>クリティカルなし</b>の場合の値を入力してください。</p>
+      <ul>
+        <li>攻撃力と与ダメージをもとに、防御力を計算します。必要なデバフ数値の計算に役立ててください。</li>
+        <li>ダメージ = 攻撃力 / (1 + 防御力 / 100) として計算しています。</li>
+        <li>攻撃力はバフも含めた値を入力してください。</li>
+        <li>ダメージは<b>通常攻撃</b>で<b>クリティカルなし</b>の場合の値を入力してください。</li>
+        <li>計算の都合上、入力した値と異なる値が表示される場合があります。</li>
+      </ul>
     </div>
   </main>
   <footer>
     開発：<a href="https://github.com/You-Your-Yu/R-tools">https://github.com/You-Your-Yu/R-tools</a>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
